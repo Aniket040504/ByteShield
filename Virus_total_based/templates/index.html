@@ -1038,8 +1038,9 @@
             </a>
             <nav class="site-nav">
                 <a href="http://127.0.0.1:5001"><i class="fas fa-brain"></i> <span>ML Detection</span></a>
-                <a href="#"><i class="fas fa-microscope"></i> <span>Dynamic Analysis</span></a>
-                <a href="http://127.0.0.1:5000/about"><i class="fas fa-circle-info"></i> <span>About</span></a>
+                <!-- <a href="#"><i class="fas fa-microscope"></i> <span>Dynamic Analysis</span></a> -->
+                <a href="{{ url_for('awareness') }}"><i class="fas fa-database"></i> <span>Awareness</span></a>
+                <a href="{{ url_for('about') }}"><i class="fas fa-circle-info"></i> <span>About</span></a>
                 <button id="toggleDarkMode" class="theme-toggle" aria-label="Toggle theme">
                     <i class="fas fa-sun"></i>
                 </button>

@@ -28,6 +28,10 @@ def index():
 def about():
     return render_template('about.html')
 
+@app.route('/awareness')
+def awareness():
+    return render_template('awareness.html')
+
 @app.route('/analyze', methods=['POST'])
 def analyze():
     file_hash = request.form.get('file_hash')

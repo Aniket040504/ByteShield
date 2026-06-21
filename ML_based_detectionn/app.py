@@ -3,7 +3,7 @@ import gc
 import time
 import subprocess
 import joblib
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, url_for
 from feature_extraction import extract_features
 
 app = Flask(__name__)
@@ -55,6 +55,11 @@ def scan_with_clamav(file_path):
 @app.route('/')
 def index():
     return render_template('index.html')
+
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
 
 
 @app.route('/analyze', methods=['POST'])

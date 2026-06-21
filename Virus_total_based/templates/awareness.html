@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Threat Awareness — ByteShield</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  header{
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: rgba(237,241,246,0.86);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(16,28,46,0.12);
+  }
+  .nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 28px;
+    gap: 24px;
+    max-width: 1120px;
+    margin: 0 auto;
+  }
+  .brand{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    font-family: "Space Grotesk", Arial, sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    color: #101C2E;
+  }
+  .brand-mark{ width: 26px; height: 26px; color: #2454C7; flex-shrink: 0; }
+  .nav-links{
+    display: flex;
+    gap: 26px;
+    flex-wrap: wrap;
+  }
+  .nav-links a{
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 12.5px;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    color: #5B6B82;
+    padding: 4px 2px;
+    border-bottom: 1.5px solid transparent;
+    transition: color .15s ease, border-color .15s ease;
+  }
+  .nav-links a:hover{ color: #2454C7; border-color: #2454C7; }
+
+  :root{
+    --paper: #EDF1F6;
+    --ink: #101C2E;
+    --slate: #5B6B82;
+    --blue: #2454C7;
+    --blue-deep: #15347E;
+    --red: #C2392B;
+    --line: rgba(16,28,46,0.12);
+    --line-strong: rgba(16,28,46,0.24);
+    --display: "Space Grotesk", Arial, sans-serif;
+    --mono: "IBM Plex Mono", monospace;
+  }
+  *{ box-sizing: border-box; }
+  html,body{ height: 100%; }
+  body{
+    margin: 0;
+    background-color: var(--paper);
+    background-image:
+      linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size: 56px 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .stage{
+    text-align: center;
+    padding: 40px 24px;
+  }
+  .tag{
+    font-family: var(--mono);
+    font-size: clamp(11px, 1.6vw, 13px);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--blue);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 22px;
+  }
+  .dot{
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--red);
+    box-shadow: 0 0 0 3px rgba(194,57,43,0.16);
+    animation: blink 1.6s ease-in-out infinite;
+  }
+  @keyframes blink{
+    0%,100%{ opacity: 1; }
+    50%{ opacity: 0.25; }
+  }
+  h1{
+    margin: 0;
+    font-family: var(--display);
+    font-weight: 700;
+    color: var(--ink);
+    font-size: clamp(40px, 11vw, 130px);
+    line-height: 0.96;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+  }
+  h1 span{
+    display: block;
+  }
+  h1 .accent{ color: var(--blue); }
+  .sub{
+    margin: 26px auto 0;
+    max-width: 480px;
+    font-family: var(--mono);
+    font-size: 13.5px;
+    color: var(--slate);
+    line-height: 1.7;
+  }
+  .bar{
+    position: relative;
+    width: 280px;
+    max-width: 70vw;
+    height: 3px;
+    background: var(--line-strong);
+    margin: 34px auto 0;
+    overflow: hidden;
+  }
+  .bar::after{
+    content: "";
+    position: absolute;
+    top: 0; left: -40%;
+    width: 40%; height: 100%;
+    background: var(--blue);
+    animation: sweep 1.8s ease-in-out infinite;
+  }
+  @keyframes sweep{
+    0%{ left: -40%; }
+    100%{ left: 100%; }
+  }
+  @media (prefers-reduced-motion: reduce){
+    .dot, .bar::after{ animation: none; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a href="/" class="brand">
+      <svg class="brand-mark" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M13 2L23 6V12C23 18 19 22.5 13 24C7 22.5 3 18 3 12V6L13 2Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+        <path d="M8 13L11.2 16L18 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      ByteShield
+    </a>
+    <nav class="nav-links">
+      <a href="/">Home</a>
+    </nav>
+  </div>
+</header>
+
+  <div class="stage">
+    <div class="tag"><span class="dot"></span>Status · Under Construction</div>
+    <h1><span>Work In</span><span class="accent">Progress</span></h1>
+    <p class="sub">This part of ByteShield is still being built. Check back soon — the detection engines are already running, this page just hasn't caught up yet.</p>
+    <div class="bar"></div>
+  </div>
+
+</body>
+</html>
