@@ -24,6 +24,10 @@ recent_results = []
 def index():
     return render_template('index.html', recent_results=recent_results)
 
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
 @app.route('/analyze', methods=['POST'])
 def analyze():
     file_hash = request.form.get('file_hash')
